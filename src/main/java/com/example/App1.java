@@ -28,7 +28,10 @@ ps.setInt(1, 18);
 ps.setString(2, "king kohli");
 ps.setString(3, "cricketer");
 ps.setString(4, "india");
-           ps.execute(); 
+
+           ps.execute();       
+
+
 con.close();
         } catch(SQLException | ClassNotFoundException se) {
             System.out.println(se.getMessage());
