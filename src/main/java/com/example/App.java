@@ -13,19 +13,23 @@ public final class App {
             Class.forName("com.mysql.cj.jdbc.Driver"); // Register the Driver
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bhanu", "root", "root");
 
-            String query = "SELECT * from emp";
+            String query = "insert into emp values(?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(query);
 
-            ResultSet rs = ps.executeQuery();
+          //  ResultSet rs = ps.executeQuery();
 
-            System.out.println("Names :-");
-            while(rs.next()) {
-                System.out.println(rs.getString("emp_id"));
-                System.out.println(rs.getString("name")); 
-                System.out.println(rs.getString("branch"));
-            }
-
-            con.close();
+            // System.out.println("Names :-");
+            // while(rs.next()) {
+            //     System.out.println(rs.getString("emp_id"));
+            //     System.out.println(rs.getString("name")); 
+            //     System.out.println(rs.getString("branch"));
+           // }
+ps.setInt(1, 18);
+ps.setString(2, "king kohli");
+ps.setString(3, "cricketer");
+ps.setString(4, "india");
+           ps.execute(); 
+con.close();
         } catch(SQLException | ClassNotFoundException se) {
             System.out.println(se.getMessage());
         }
