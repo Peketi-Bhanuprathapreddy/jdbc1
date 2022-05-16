@@ -4,7 +4,7 @@ package com.example;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+//import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public final class App {
@@ -13,7 +13,7 @@ public final class App {
             Class.forName("com.mysql.cj.jdbc.Driver"); // Register the Driver
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bhanu", "root", "root");
 
-            String query = "insert into emp values(?,?,?,?)";
+            String query = "insert into address values(?)";
             PreparedStatement ps = con.prepareStatement(query);
 
           //  ResultSet rs = ps.executeQuery();
@@ -24,10 +24,10 @@ public final class App {
             //     System.out.println(rs.getString("name")); 
             //     System.out.println(rs.getString("branch"));
            // }
-ps.setInt(1, 18);
-ps.setString(2, "king kohli");
-ps.setString(3, "cricketer");
-ps.setString(4, "india");
+ps.setString(1, "hyderbad");
+//ps.setString(2, "king kohli");
+//ps.setString(3, "cricketer");
+//ps.setString(4, "india");
            ps.execute(); 
 con.close();
         } catch(SQLException | ClassNotFoundException se) {
