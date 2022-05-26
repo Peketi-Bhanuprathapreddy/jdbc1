@@ -18,7 +18,7 @@ class tofind_maximumtoys
                  add=add+prices[j];
                  count=count+1;
                  max=Math.max(count,max);
-             }
+             }  
              else{
                  count=0;
                  add=0;
