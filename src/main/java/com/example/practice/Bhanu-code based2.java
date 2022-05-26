@@ -13,9 +13,9 @@ class tofind_maximumtoys
          sum=count=0;
          for( int j=1;j<cost.length;j++)
          {
-             if((sum+prices[j])<=money)
+             if((sum+cost[j])<=money)
              {
-                 add=add+prices[j];
+                 add=add+cost[j];
                  count=count+1;
                  max=Math.max(count,max);
              }  
