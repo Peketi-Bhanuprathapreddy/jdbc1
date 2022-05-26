@@ -3,7 +3,7 @@ package main.java.com.example.practice;
 import java.util.*;
 class tofind_maximumtoys
 {
- public static int toys(int cost[], int money)   
+ public static int toys(int cost[],int money)   
  {
      int add=0;
      int count=0;
